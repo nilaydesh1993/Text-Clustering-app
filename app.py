@@ -235,7 +235,7 @@ if submit:  # Check if the button is clicked
         id_column = "Number"
 
         # User can provide one or multiple text columns
-        text_columns = text_columns  # Example: Change to ["Title", "Description"] to combine multiple columns
+        text_columns = column_list  # Example: Change to ["Title", "Description"] to combine multiple columns
         print(text_columns)
         num_clusters = number_clusters  # Set to an integer (e.g., 5) to specify clusters, or leave None for auto-detection
 
