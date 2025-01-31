@@ -186,7 +186,12 @@ if uploaded_file is not None:
     df_main = df.copy()
 
     # Additional mandatory inputs
-    text_column = st.text_input("Enter the name of the text columns:")
+    text_columns = st.text_input("Enter the name of the text columns (comma-separated):")
+
+    # Split the input string into a list of column names
+    if text_columns:
+        column_list = [col.strip() for col in text_columns.split(',')]
+        print("You entered:", column_list)
 
 
    # Radio button for cluster selection mode
@@ -230,7 +235,7 @@ if submit:  # Check if the button is clicked
         id_column = "Number"
 
         # User can provide one or multiple text columns
-        text_columns = [text_column]  # Example: Change to ["Title", "Description"] to combine multiple columns
+        text_columns = text_columns  # Example: Change to ["Title", "Description"] to combine multiple columns
         print(text_columns)
         num_clusters = number_clusters  # Set to an integer (e.g., 5) to specify clusters, or leave None for auto-detection
 
